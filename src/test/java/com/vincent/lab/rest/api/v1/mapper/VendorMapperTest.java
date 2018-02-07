@@ -32,6 +32,16 @@ public class VendorMapperTest {
 	@Test
 	public void testVendorToVendorDTO() {
 		
+		//given
+		Vendor vendor = new Vendor();
+		vendor.setName(NAME);
+		
+		//when
+		VendorDTO vendorDTO = vendorMapper.vendorToVendorDTO(vendor);
+		
+		//then
+		assertEquals(vendor.getName(), vendorDTO.getName());
+		
 	}
 
 	/**
@@ -39,6 +49,17 @@ public class VendorMapperTest {
 	 */
 	@Test
 	public void testVendorDTOtoVendor() {
+		
+		//given
+		VendorDTO vendorDTO = new VendorDTO();
+		vendorDTO.setName(NAME);
+		
+		//when
+		Vendor vendor = vendorMapper.vendorDTOtoVendor(vendorDTO);
+		
+		//then
+		assertEquals(vendorDTO.getName(), vendor.getName());
+		
 		
 	}
 
